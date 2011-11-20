@@ -1,0 +1,17 @@
+Simple Installation:
+
+sudo apt-get install python-setuptools
+sudo apt-get install python-beautifulsoup
+
+Save code in file. then run below code. and then run code.
+
+python filaname.py
+
+
+Features:
+
+See all words listed with given alphabets.
+See meaning of given word in tamil.
+Bugs:
+
+Tamil font was not clear in terminal mode.
