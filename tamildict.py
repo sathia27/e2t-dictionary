@@ -46,8 +46,7 @@ try:
                     #print textwrap.fill(dedented_text,width=200)
                     for i in li:
                          total_string += i
-                         if i != "ி":
-                           total_string += " "
+                         total_string += " "
                 print total_string
             except KeyboardInterrupt:
                print "\n\nQuitting!!"
