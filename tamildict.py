@@ -4,6 +4,7 @@ import urllib2
 from BeautifulSoup import BeautifulSoup
 import re
 import codecs
+import textwrap
 try:
     def alphabets():
         while True:
@@ -39,15 +40,19 @@ try:
                 soup = BeautifulSoup(con)
                 meaning_of_word = soup.find("div", {"class":"mw-content-ltr"})
                 ul = meaning_of_word.findAll("ul")[1]
-                f = open("temp","w")
+                total_string = ''
                 for li in ul.findAll(text=True):
-                    print li
+                    #dedented_text = textwrap.dedent(li).strip()
+                    #print textwrap.fill(dedented_text,width=200)
+                    for i in li:
+                         total_string += i
+                         if i != "ி":
+                           total_string += " "
+                print total_string
             except KeyboardInterrupt:
                print "\n\nQuitting!!"
                break 
-            except:
-                print "Sorry!! given word %r not found" %word
-                print " or some internet connection!!"
+
     c = raw_input("Enter \n '1' for see all words for given alphabets \n '2' to get meaning of word in tamil\nEnter choice: ")
     if c == "1":
         alphabets()
