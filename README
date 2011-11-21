@@ -5,8 +5,18 @@ sudo apt-get install python-beautifulsoup
 
 Save code in file. then run below code. and then run code.
 
-python filaname.py
+python tamildict.py
 
+Enter 
+ '1' for see all words for given alphabets 
+ '2' to get meaning of word in tamil
+Enter choice: 1
+
+If u enter choice "1", This will prompt for alphabet. If u enter any alphabets,
+This will list all words starting with that.
+
+If u enter choice "2", This will prompt for word. If u enter any word,
+This will show meaning of word in tamil
 
 Features:
 
@@ -17,3 +27,4 @@ Bugs:
 Tamil font was not clear in terminal mode.
 
 Feel free to edit this code.
+mail me @ sathia2704@gmail.com
