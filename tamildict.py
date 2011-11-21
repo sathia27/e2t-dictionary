@@ -23,11 +23,11 @@
 #
 #=END E2T DICTIONARY GPL
 #
-
 import urllib2
 from BeautifulSoup import BeautifulSoup
 try:
     def alphabets():
+        """Here get all words, listed by alphabet which was entered by user"""
         while True:
             try:
                 alphabet = raw_input("Enter the alphabet(eg. 'a' or 'b' to get all words.. Type 'quit' for quiting+): ")
@@ -43,14 +43,16 @@ try:
                 print "Words listed for Alphabet %r" %alphabet
                 print "="*40+"\n"
                 for i in all_words:
-                  print i.contents[0]
+                    print i.contents[0]
             except KeyboardInterrupt:
-               print "\n\nQuitting!!"
-               break 
+                print "\n\nQuitting!!"
+                break 
             except:
                 print "Sorry!! given alphabet %r not found" %alphabet
                 print " or some internet connection!!"          
+
     def words():
+        """Here get meaning of word in tamil, for word that was entered by user"""
         while True:
             try:
                 word = raw_input("Enter the word:")
@@ -63,19 +65,16 @@ try:
                 ul = meaning_of_word.findAll("ul")[1]
                 total_string = ''
                 for li in ul.findAll(text=True):
-                    #dedented_text = textwrap.dedent(li).strip()
-                    #print textwrap.fill(dedented_text,width=200)
                     for i in li:
                          total_string += i
                          total_string += " "
                 print total_string
             except KeyboardInterrupt:
-               print "\n\nQuitting!!"
-               break 
+                print "\n\nQuitting!!"
+                break 
             except:
-               print "Sorry!! given word %r not found" %word
-               print " or some internet connection!!"          
-
+                print "Sorry!! given word %r not found" %word
+                print " or some internet connection!!"
     c = raw_input("Enter \n '1' for see all words for given alphabets \n '2' to get meaning of word in tamil\nEnter choice: ")
     if c == "1":
         alphabets()
